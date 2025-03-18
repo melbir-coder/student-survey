@@ -1,18 +1,20 @@
-document.getElementById('survey-form').addEventListener('submit', function (e) {
+
+  document.getElementById('survey-form').addEventListener('submit', function (e) {
     e.preventDefault(); // Prevent form submission
   
-    // Collect form data
-    const formData = {
-      challenges: document.getElementById('challenges').value,
-      services: Array.from(document.querySelectorAll('input[name="services"]:checked')).map(el => el.value),
-      budget: document.getElementById('budget').value,
-      platform: document.getElementById('platform').value,
-      interest: document.querySelector('input[name="interest"]:checked').value,
-    };
+    // Get form values
+    const challenges = document.getElementById('challenges').value;
+    const platform = document.getElementById('platform').value;
+    const budget = document.getElementById('budget').value;
+    const interest = document.querySelector('input[name="interest"]:checked');
   
-    // Log data to console (you can send it to a server instead)
-    console.log(formData);
+    // Validate form
+    if (!challenges || !platform || !budget || !interest) {
+      alert('Please fill out all required fields.');
+      return;
+    }
   
-    // Show a success message
-    alert('Thank you for your response!');
+    // If validation passes, submit the form
+    alert('Form submitted successfully!');
+    this.submit(); // Submit the form to Formspree
   });
