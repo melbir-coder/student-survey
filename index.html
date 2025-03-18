@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Needs Survey</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <h1>Student Needs Survey</h1>
+    <form id="survey-form" action="https://formspree.io/f/xjkykdzd" method="POST">
+      <!-- Text Input -->
+      <label for="challenges">What are the biggest challenges you face as a university student?</label>
+      <textarea id="challenges" name="challenges" rows="4" required></textarea>
+
+      <!-- Checkboxes -->
+      <label>What services or products do you wish were more accessible on campus?</label>
+      <div class="checkbox-group">
+        <input type="checkbox" id="food" name="services[]" value="Affordable Food Delivery">
+        <label for="food">Affordable Food Delivery</label><br>
+        <input type="checkbox" id="study" name="services[]" value="Study Materials">
+        <label for="study">Study Materials</label><br>
+        <input type="checkbox" id="tutoring" name="services[]" value="Tutoring">
+        <label for="tutoring">Tutoring</label><br>
+        <input type="checkbox" id="other" name="services[]" value="Other">
+        <label for="other">Other</label>
+      </div>
+
+      <!-- Dropdown -->
+      <label for="budget">How much would you be willing to pay for these services?</label>
+      <select id="budget" name="budget" required>
+        <option value="less than 100 ETB">Less than 100 ETB</option>
+        <option value="100-500 ETB">100-500 ETB</option>
+        <option value="500+ ETB">500+ ETB</option>
+      </select>
+
+      <!-- Text Input -->
+      <label for="platform">What kind of apps or platforms would make your life easier?</label>
+      <input type="text" id="platform" name="platform" required>
+
+      <!-- Radio Buttons -->
+      <label>Would you be interested in a platform that solves these problems?</label>
+      <div class="radio-group">
+        <input type="radio" id="yes" name="interest" value="Yes" required>
+        <label for="yes">Yes</label><br>
+        <input type="radio" id="no" name="interest" value="No">
+        <label for="no">No</label>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
